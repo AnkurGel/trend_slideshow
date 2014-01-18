@@ -1,0 +1,17 @@
+%h1#headline Twitter App
+%h2
+  Create slideshow for a
+  %strong trending
+  topic!
+.container
+  =form_for :twitter, :url => slideshow_path do |f|
+    =f.label :hashtag
+    =f.text_field :hashtag
+
+    %br
+
+    =f.label :count, "Number of tweets to analyze"
+    =f.text_field :count, placeholder: "100", size: 3
+
+    %br
+    =f.submit "Generate Slideshow"
